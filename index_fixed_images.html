@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>鳶鳶相抱 | 手機磁吸卡套</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --cream: #faf6f1;
+      --blush: #f2ddd5;
+      --dusty-rose: #d4967a;
+      --warm-brown: #8b5e52;
+      --deep-brown: #3d2b24;
+      --sage: #b5c4b1;
+      --soft-blue: #b8ccd4;
+      --ink: #2c2018;
+      --light-sage: #e8efe6;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* ── 導覽列 ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250, 246, 241, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 150, 122, 0.2);
+    }
+
+    .nav-logo {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--warm-brown);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--deep-brown);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      opacity: 0.75;
+      transition: opacity 0.25s;
+    }
+
+    .nav-links a:hover { opacity: 1; color: var(--dusty-rose); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 4rem 4rem;
+      gap: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 55%;
+      height: 115%;
+      background: linear-gradient(160deg, var(--blush) 0%, var(--light-sage) 100%);
+      border-radius: 50% 0 0 60%;
+      z-index: 0;
+      opacity: 0.55;
+    }
+
+    .hero-text { position: relative; z-index: 1; }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--dusty-rose);
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--deep-brown);
+      margin-bottom: 1rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--dusty-rose);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--warm-brown);
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+      line-height: 2;
+      opacity: 0.85;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--warm-brown);
+      color: var(--cream);
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--deep-brown);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--warm-brown);
+      padding: 0.9rem 2.2rem;
+      border: 1.5px solid var(--dusty-rose);
+      border-radius: 50px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: var(--blush);
+      transform: translateY(-2px);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card-mockup {
+      width: 280px;
+      height: 400px;
+      background: linear-gradient(145deg, #fff 0%, var(--blush) 100%);
+      border-radius: 28px;
+      box-shadow: 0 30px 80px rgba(61, 43, 36, 0.18), 0 8px 24px rgba(212, 150, 122, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-mockup::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(0deg, var(--blush) 0%, transparent 100%);
+    }
+
+    .kite-svg-large {
+      width: 160px;
+      height: 160px;
+      opacity: 0.9;
+    }
+
+    .hero-product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+
+    .card-label {
+      margin-top: 1rem;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      color: var(--warm-brown);
+      letter-spacing: 0.1em;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── 痛點區 ── */
+    .section { padding: 6rem 4rem; }
+
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      text-align: center;
+      color: var(--deep-brown);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--warm-brown);
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 3.5rem;
+      opacity: 0.75;
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.6rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .pain-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem 1.8rem;
+      border: 1px solid rgba(212, 150, 122, 0.15);
+      box-shadow: 0 4px 24px rgba(61, 43, 36, 0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .pain-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(212, 150, 122, 0.18);
+    }
+
+    .pain-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--blush);
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pain-card h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--deep-brown);
+      margin-bottom: 0.6rem;
+    }
+
+    .pain-card p {
+      font-size: 0.85rem;
+      color: var(--warm-brown);
+      line-height: 1.9;
+      opacity: 0.85;
+    }
+
+    /* ── 商品特色 ── */
+    .features-section {
+      background: linear-gradient(150deg, var(--light-sage) 0%, var(--blush) 100%);
+      padding: 6rem 4rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .feature-item {
+      text-align: center;
+    }
+
+    .feature-dot {
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(212, 150, 122, 0.2);
+    }
+
+    .feature-item h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      color: var(--deep-brown);
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-item p {
+      font-size: 0.82rem;
+      color: var(--warm-brown);
+      line-height: 1.8;
+    }
+
+    .features-showcase {
+      display: block;
+      width: min(420px, 90%);
+      margin: 0 auto 1.6rem;
+      border-radius: 24px;
+      box-shadow: 0 20px 45px rgba(61, 43, 36, 0.12);
+    }
+
+
+    .usage-section {
+      padding: 3rem 4rem 2.5rem;
+      background: linear-gradient(150deg, var(--light-sage) 0%, var(--blush) 100%);
+    }
+
+    .usage-section .section-sub {
+      margin-bottom: 2rem;
+    }
+
+    .usage-images {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: nowrap;
+      margin: 0 auto;
+    }
+
+    .usage-image-frame {
+      width: 220px;
+      height: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: transparent;
+      flex: 0 0 220px;
+    }
+
+    .usage-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(61, 43, 36, 0.08);
+    }
+
+
+    /* ── 款式區 ── */
+    .styles-section { padding: 6rem 4rem; background: #fff; }
+
+    .styles-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .style-row {
+      margin-bottom: 3rem;
+    }
+
+    .style-row-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.05rem;
+      color: var(--deep-brown);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--blush);
+    }
+
+    .color-chips {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .color-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 1rem 0.5rem 0.5rem;
+      border-radius: 50px;
+      border: 1.5px solid rgba(212, 150, 122, 0.25);
+      font-size: 0.83rem;
+      color: var(--warm-brown);
+      background: var(--cream);
+    }
+
+    .chip-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.7);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .chip-dot.pink  { background: #f2c4c4; }
+    .chip-dot.black { background: #2c2018; }
+    .chip-dot.blue  { background: #b8ccd4; }
+
+
+    .plain-product-layout {
+      display: block;
+      margin: 16px 0;
+      text-align: left;
+    }
+
+    .plain-product-gallery {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 14px;
+      flex-wrap: nowrap;
+      margin: 0;
+    }
+
+    .plain-product-card {
+      width: 160px;
+      height: 160px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.72);
+      box-shadow: 0 10px 24px rgba(61, 43, 36, 0.12);
+      flex: 0 0 160px;
+    }
+
+    .plain-product-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 14px;
+      filter: brightness(1.03) contrast(1.02);
+    }
+
+    .plain-product-image-pink {
+      object-position: center;
+    }
+
+    .plain-product-image-black {
+      object-position: 50% 43%;
+    }
+
+    .plain-product-image-blue {
+      object-position: 50% 44%;
+    }
+
+    .plain-product-info {
+      width: auto;
+      min-width: 0;
+      margin-top: 16px;
+    }
+
+    .plain-product-info .color-chips {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .plain-product-gallery {
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .plain-product-card {
+        width: 132px;
+        height: 132px;
+        flex: 0 0 132px;
+      }
+    }
+
+    .style-price {
+      margin-top: 0.9rem;
+      font-size: 0.85rem;
+      color: var(--warm-brown);
+      letter-spacing: 0.02em;
+    }
+
+    .variant-price {
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+      color: var(--warm-brown);
+      letter-spacing: 0.02em;
+    }
+
+
+    .kite-bird-circle {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      overflow: hidden;
+      background: rgba(242, 221, 213, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(212, 150, 122, 0.15);
+    }
+
+    .kite-bird-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .kite-variants {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.8rem;
+    }
+
+    .kite-variant-card {
+      flex: 1;
+      min-width: 200px;
+      background: var(--cream);
+      border-radius: 18px;
+      padding: 1.8rem 1.5rem;
+      border: 1.5px solid rgba(212, 150, 122, 0.2);
+      text-align: center;
+    }
+
+    .kite-variant-card h4 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.95rem;
+      color: var(--deep-brown);
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .kite-variant-card p {
+      font-size: 0.8rem;
+      color: var(--warm-brown);
+      opacity: 0.8;
+    }
+
+    /* ── 購買區 ── */
+    .purchase-section {
+      padding: 6rem 4rem;
+      background: var(--deep-brown);
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .purchase-section .section-title { color: var(--cream); }
+    .purchase-section .section-sub { color: var(--blush); }
+
+    .purchase-cards {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .purchase-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(242, 221, 213, 0.25);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      width: 260px;
+      transition: background 0.3s;
+    }
+
+    .purchase-card:hover { background: rgba(255,255,255,0.1); }
+
+    .purchase-card h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      color: var(--blush);
+      margin-bottom: 0.8rem;
+    }
+
+    .purchase-card p {
+      font-size: 0.85rem;
+      color: rgba(250, 246, 241, 0.7);
+      line-height: 1.9;
+    }
+
+    .purchase-card .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--dusty-rose);
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── 優惠區 ── */
+    .promo-section {
+      padding: 4.5rem 4rem;
+      text-align: center;
+      background: var(--blush);
+    }
+
+    .promo-offer-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .promo-offer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .promo-offer-card {
+      background: rgba(255,255,255,0.6);
+      border: 1.5px solid rgba(212, 150, 122, 0.22);
+      border-radius: 20px;
+      padding: 1.7rem 1.5rem;
+    }
+
+    .promo-offer-card h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      color: var(--deep-brown);
+      margin-bottom: 0.65rem;
+    }
+
+    .promo-offer-price {
+      font-size: 1.28rem;
+      color: var(--warm-brown);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    .promo-offer-note {
+      font-size: 0.82rem;
+      color: var(--warm-brown);
+      opacity: 0.82;
+    }
+
+    .promo-highlight {
+      display: inline-block;
+      margin-top: 1.35rem;
+      background: var(--cream);
+      color: var(--deep-brown);
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      border: 1px solid rgba(212, 150, 122, 0.2);
+    }
+
+    /* ── 頁尾 ── */
+    footer {
+      background: var(--ink);
+      color: rgba(250,246,241,0.5);
+      text-align: center;
+      padding: 2.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    footer span { color: var(--dusty-rose); }
+
+    /* ── 裝飾線 ── */
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--dusty-rose);
+      margin: 0 auto 2.5rem;
+      opacity: 0.6;
+    }
+
+    /* ── 動畫 ── */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .hero-card-mockup { animation: float 5s ease-in-out infinite; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-text > * {
+      animation: fadeUp 0.9s ease forwards;
+      opacity: 0;
+    }
+    .hero-eyebrow { animation-delay: 0.1s; }
+    .hero-title   { animation-delay: 0.3s; }
+    .hero-sub     { animation-delay: 0.5s; }
+    .hero-cta-group { animation-delay: 0.7s; }
+
+    /* ── RWD ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 6rem 1.8rem 3rem;
+        text-align: center;
+      }
+
+      .hero::before { display: none; }
+
+      .hero-sub { max-width: 100%; }
+
+      .hero-cta-group { justify-content: center; }
+
+      .section, .features-section, .styles-section, .purchase-section {
+        padding: 4rem 1.8rem;
+      }
+
+      .hero-card-mockup { width: 220px; height: 320px; }
+
+      .usage-section { padding: 2.5rem 1.8rem 2rem; }
+      .usage-images {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 16px;
+      flex-wrap: nowrap;
+      margin: 0 auto;
+    }
+
+    .usage-image-frame {
+      width: 220px;
+      height: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: transparent;
+      flex: 0 0 220px;
+    }
+
+    .usage-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(61, 43, 36, 0.08);
+    }
+    }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<div class="nav-logo">鳶鳶相抱</div>
+<ul class="nav-links">
+<li><a href="#pain">關於</a></li>
+<li><a href="#features">特色</a></li>
+<li><a href="#styles">款式</a></li>
+<li><a href="#buy">購買</a></li>
+</ul>
+</nav>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-text">
+<p class="hero-eyebrow">NTPU Exclusive  |  台北大學限定</p>
+<h1 class="hero-title">
+        讓出門<em>輕盈</em>，<br/>
+        帶走北大的<em>記憶</em>。
+      </h1>
+<p class="hero-sub">
+        鳶鳶相抱 · 手機磁吸卡套<br/>
+        輕薄皮革 · 強力磁吸 · 北大飛鳶圖案<br/>
+        卡套、支架、紀念品三合一。
+      </p>
+<div class="hero-cta-group">
+<a class="btn-primary" href="#buy">立即預購</a>
+<a class="btn-outline" href="#styles">查看款式</a>
+</div>
+</div>
+<div class="hero-image-wrap">
+<div class="hero-card-mockup">
+<img alt="鳶鳶相抱手機磁吸卡套商品主圖" class="hero-product-image" src="hero-product.jpg"/>
+</div>
+</div>
+</section>
+<!-- 痛點 -->
+<section class="section" id="pain">
+<h2 class="section-title">你是不是也有這些困擾？</h2>
+<p class="section-sub">我們懂你，所以我們做了這個</p>
+<div class="divider"></div>
+<div class="pain-grid">
+<div class="pain-card">
+<div class="pain-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22">
+<rect height="13" rx="2" stroke="#d4967a" stroke-width="1.8" width="18" x="3" y="6"></rect>
+<path d="M3 10h18" stroke="#d4967a" stroke-width="1.8"></path>
+<circle cx="8" cy="15" fill="#d4967a" r="1.5"></circle>
+</svg>
+</div>
+<h3>上公車刷卡大崩潰</h3>
+<p>包包翻遍了還找不到公車卡，後面的人都在等你⋯⋯</p>
+</div>
+<div class="pain-card">
+<div class="pain-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22">
+<path d="M7 4h10a1 1 0 011 1v14a2 2 0 01-4 0H10a2 2 0 01-4 0V5a1 1 0 011-1z" stroke="#d4967a" stroke-width="1.8"></path>
+<path d="M10 4V2h4v2" stroke="#d4967a" stroke-linecap="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3>錢包又厚又重</h3>
+<p>只是要出門買杯飲料，錢包塞滿口袋、包包又懶得帶。</p>
+</div>
+<div class="pain-card">
+<div class="pain-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22">
+<rect height="20" rx="2" stroke="#d4967a" stroke-width="1.8" width="14" x="5" y="2"></rect>
+<path d="M9 18h6" stroke="#d4967a" stroke-linecap="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3>追劇手機沒地方放</h3>
+<p>衛生紙架、水壺輪流撐，手機還是一直滑落，好崩潰。</p>
+</div>
+<div class="pain-card">
+<div class="pain-icon">
+<svg fill="none" height="22" viewbox="0 0 24 24" width="22">
+<path d="M12 2L4 7v10l8 5 8-5V7z" stroke="#d4967a" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M12 22V12M4 7l8 5 8-5" stroke="#d4967a" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3>北大找不到實用紀念品</h3>
+<p>不只是個擺飾，是每天都會用到、帶著北大記憶的好物。</p>
+</div>
+</div>
+</section>
+<!-- 特色 -->
+<section class="features-section" id="features">
+<h2 class="section-title">鳶鳶相抱的解法</h2>
+<p class="section-sub">一個卡套，五種生活升級</p>
+<img alt="手機磁吸卡套三色商品圖" class="features-showcase" src="feature-showcase.jpg"/>
+<div class="divider"></div>
+<div class="features-grid">
+<div class="feature-item">
+<div class="feature-dot">
+<svg fill="none" height="26" viewbox="0 0 24 24" width="26">
+<path d="M12 2l2.5 7.5H22l-6.4 4.6 2.5 7.5L12 17l-6.1 4.6 2.5-7.5L2 9.5h7.5z" stroke="#d4967a" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</div>
+<h3>強力磁吸</h3>
+<p>牢牢吸附手機背面，跑步也不怕掉。</p>
+</div>
+<div class="feature-item">
+<div class="feature-dot">
+<svg fill="none" height="26" viewbox="0 0 24 24" width="26">
+<rect height="20" rx="2" stroke="#d4967a" stroke-width="1.6" width="16" x="4" y="3"></rect>
+<path d="M8 8h8M8 12h5" stroke="#d4967a" stroke-linecap="round" stroke-width="1.6"></path>
+</svg>
+</div>
+<h3>超輕薄設計</h3>
+<p>放口袋完全不突兀，比傳統錢包薄 80%。</p>
+</div>
+<div class="feature-item">
+<div class="feature-dot">
+<svg fill="none" height="26" viewbox="0 0 24 24" width="26">
+<path d="M5 20V9l7-7 7 7v11H5z" stroke="#d4967a" stroke-linejoin="round" stroke-width="1.6"></path>
+<rect height="6" rx="1" stroke="#d4967a" stroke-width="1.4" width="6" x="9" y="14"></rect>
+</svg>
+</div>
+<h3>北大飛鳶圖案</h3>
+<p>專屬可愛飛鳶，帶走屬於你的北大記憶。</p>
+</div>
+<div class="feature-item">
+<div class="feature-dot">
+<svg fill="none" height="26" viewbox="0 0 24 24" width="26">
+<path d="M5 21V8l7-5 7 5v13" stroke="#d4967a" stroke-linejoin="round" stroke-width="1.6"></path>
+<path d="M9 21v-7h6v7" stroke="#d4967a" stroke-width="1.4"></path>
+</svg>
+</div>
+<h3>手機支架功能</h3>
+<p>隨時支撐手機，追劇煲劇從此解放雙手。</p>
+</div>
+<div class="feature-item">
+<div class="feature-dot">
+<svg fill="none" height="26" viewbox="0 0 24 24" width="26">
+<path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z" stroke="#d4967a" stroke-width="1.6"></path>
+<path d="M8 12l3 3 5-5" stroke="#d4967a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+</svg>
+</div>
+<h3>高級皮革材質</h3>
+<p>細膩皮革手感，質感拿出來自帶氣場。</p>
+</div>
+</div>
+</section>
+<section class="usage-section">
+<div class="styles-container">
+<h2 class="section-title">日常使用情境</h2>
+<p class="section-sub">多色選擇、可放學生證，也能作為手機支架，陪你更輕鬆地出門。</p>
+<div class="usage-images">
+<div class="usage-image-frame">
+<img alt="三色款式展示圖" class="usage-image" src="usage-colors.jpg"/>
+</div>
+<div class="usage-image-frame">
+<img alt="可放學生證的使用圖" class="usage-image" src="usage-card.jpg"/>
+</div>
+<div class="usage-image-frame">
+<img alt="可當手機支架的使用圖" class="usage-image" src="usage-stand.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<section class="styles-section" id="styles">
+<!-- 款式 -->
+<section class="styles-section" id="styles">
+<h2 class="section-title">款式選擇</h2>
+<p class="section-sub">找到最適合你的那一款</p>
+<div class="divider"></div>
+<div class="styles-container">
+<!-- 素色款 -->
+<div class="style-row">
+<h3 class="style-row-title">素色款 — 簡約日常</h3>
+<div class="plain-product-layout">
+<div class="plain-product-gallery">
+<div class="plain-product-card">
+<img alt="素色款卡套櫻花粉" class="plain-product-image plain-product-image-pink" src="plain-pink.jpg"/>
+</div>
+<div class="plain-product-card">
+<img alt="素色款卡套靜謐黑" class="plain-product-image plain-product-image-black" src="black.jpg"/>
+</div>
+<div class="plain-product-card">
+<img alt="素色款卡套柔霧藍" class="plain-product-image plain-product-image-blue" src="blue.jpg"/>
+</div>
+</div>
+<div class="plain-product-info">
+<div class="color-chips">
+<div class="color-chip"><span class="chip-dot pink"></span> 櫻花粉</div>
+<div class="color-chip"><span class="chip-dot black"></span> 靜謐黑</div>
+<div class="color-chip"><span class="chip-dot blue"></span> 柔霧藍</div>
+</div>
+<p class="style-price">NT$279</p>
+</div>
+</div>
+</div>
+<!-- 圖案款 -->
+<div class="style-row">
+<h3 class="style-row-title">圖案款 — 北大限定飛鳶</h3>
+<div class="kite-variants">
+<div class="kite-variant-card">
+<div class="kite-bird-circle">
+<img alt="嚴肅鳶" src="serious-kite.jpg"/>
+</div>
+<h4>嚴肅鳶</h4>
+<p>表情認真，超有個性</p>
+<p class="variant-price">NT$299</p>
+<div class="color-chips" style="justify-content:center;margin-top:0.8rem;">
+<div class="color-chip"><span class="chip-dot pink"></span></div>
+<div class="color-chip"><span class="chip-dot black"></span></div>
+<div class="color-chip"><span class="chip-dot blue"></span></div>
+</div>
+</div>
+<div class="kite-variant-card">
+<div class="kite-bird-circle">
+<img alt="呆呆鳶" src="dazed-kite.jpg"/>
+</div>
+<h4>呆呆鳶</h4>
+<p>圓圓大眼，萌翻全場</p>
+<p class="variant-price">NT$299</p>
+<div class="color-chips" style="justify-content:center;margin-top:0.8rem;">
+<div class="color-chip"><span class="chip-dot pink"></span></div>
+<div class="color-chip"><span class="chip-dot black"></span></div>
+<div class="color-chip"><span class="chip-dot blue"></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 優惠 -->
+<section class="promo-section">
+<div class="promo-offer-wrap">
+<h2 class="section-title" style="color:var(--deep-brown);">三入優惠組合</h2>
+<div class="promo-offer-grid">
+<div class="promo-offer-card">
+<h3>圖案款三入組</h3>
+<div class="promo-offer-price">NT$850</div>
+<p class="promo-offer-note">平均一個約 NT$283</p>
+</div>
+<div class="promo-offer-card">
+<h3>素色款三入組</h3>
+<div class="promo-offer-price">NT$800</div>
+<p class="promo-offer-note">平均一個約 NT$267</p>
+</div>
+</div>
+<div class="promo-highlight">三件商品可任選顏色自由搭配（不限款式）</div>
+</div>
+</section>
+<!-- 購買 -->
+<section class="purchase-section" id="buy">
+<h2 class="section-title">如何購買？</h2>
+<p class="section-sub">兩種方式，選擇你最方便的</p>
+<div class="purchase-cards">
+<div class="purchase-card">
+<div class="step-num">01</div>
+<h3>預購 + 現場取貨</h3>
+<p>先填表預購，指定時間到現場取貨，零運費、零等待。適合北大在校生。</p>
+</div>
+<div class="purchase-card">
+<div class="step-num">02</div>
+<h3>賣貨便寄送</h3>
+<p>透過賣貨便平台下單，全台宅配到府，不在台北也能擁有北大記憶。</p>
+</div>
+</div>
+<div style="margin-top:3.5rem;">
+<a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd5TAOcAxWKJuHHUfSMg_SHz6HQ9fvz96NhNKJt5jVTZrMA8g/viewform?pli=1" rel="noopener noreferrer" style="font-size:1rem;padding:1rem 3rem;" target="_blank">填寫預購表單</a>
+</div>
+<p style="margin-top:1.2rem;font-size:0.8rem;opacity:0.5;">如有任何問題，歡迎透過 Instagram 聯絡我們</p>
+</section>
+<!-- FOOTER -->
+<footer>
+<p>2026  <span>鳶鳶相抱</span>  |   台北大學限定紀念商品   |   All Rights Reserved</p>
+</footer>
+</section></body>
+</html>
